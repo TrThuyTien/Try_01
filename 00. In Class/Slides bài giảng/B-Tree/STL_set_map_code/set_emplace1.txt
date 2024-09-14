@@ -1,0 +1,19 @@
+// Kết quả: I UITer am
+
+#include <iostream>
+#include <set>
+#include <string>
+using namespace std;
+
+int main() {
+    set<string> s{};
+    s.emplace("I");
+    s.emplace("am");
+    s.emplace("UITer");
+    // UITer sẽ không được thêm vào set nữa vì đã tồn tại
+    s.emplace("UITer");
+
+    for (auto it = s.begin(); it != s.end(); ++it)
+        cout << ' ' << *it;
+    return 0;
+}

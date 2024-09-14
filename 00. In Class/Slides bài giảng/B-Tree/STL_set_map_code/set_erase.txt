@@ -1,0 +1,22 @@
+// Kết quả: 10 9 7 5 4
+#include <iostream>
+#include <set>
+
+int main () {
+    int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::set<int, std::greater<int>> s(a, a+10);
+    std::set<int>::iterator it;
+
+    s.erase (s.find(8));
+    // Nếu tìm xóa 15 sẽ báo lỗi
+    // s.erase (s.find(15));
+    s.erase (6);
+
+    s.erase (s.find (3), s.end());
+
+    for (it=s.begin(); it!=s.end(); ++it)
+        std::cout << *it << ' ';
+    std::cout << std::endl;
+
+    return 0;
+}

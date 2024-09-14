@@ -1,0 +1,16 @@
+/*Kết quả:
+h 8
+y 9 */
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    set<pair<char, int>> s;
+    s.emplace('y', 9);
+    // Không dùng được: ms.insert('b', 25);
+    s.insert(make_pair('h', 8));
+    for (auto it = s.begin(); it != s.end(); ++it)
+        cout << " " << (*it).first << " "
+             << (*it).second << endl;
+    return 0;
+}
